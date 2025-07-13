@@ -139,23 +139,52 @@ namespace OOP_Session_03
         public int Minutes;
         public int Seconds;
         public Duration() { }
-    
-    #endregion
 
-    #region Part 2 Q2
-     public Duration(int h, int m, int s)
+        #endregion
+
+        #region Part 2 Q2
+        public Duration(int h, int m, int s)
         {
             Hours = h;
             Minutes = m;
             Seconds = s;
-            
         }
-    #endregion
-    internal class Program
+        #endregion
+
+
+        #region Part 2 Q3
+        public override string ToString()
         {
-        static void Main(string[] args)
+            string output = "";
+
+            if (Hours > 0)
+                output += $"Hours: {Hours}, ";
+
+            if (Hours > 0 || Minutes > 0)
+                output += $"Minutes: {Minutes}, ";
+
+            output += $"Seconds: {Seconds}";
+
+            return output;
+        }
+
+        public override int GetHashCode()
         {
-            
+            return TotalSeconds().GetHashCode();
         }
+
+        public int TotalSeconds()
+        {
+            return Hours * 3600 + Minutes * 60 + Seconds;
         }
+
+        #endregion
+        internal class Program
+        {
+            static void Main(string[] args)
+            {
+
+            }
+        }
+    }
 }
