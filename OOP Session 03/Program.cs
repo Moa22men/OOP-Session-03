@@ -48,7 +48,45 @@ namespace OOP_Session_03
     }
     #endregion
 
+    #region Part 1 Q3
+    class ComplexNumber
+    {
+        public int real;
+        public int imag;
 
+        public ComplexNumber(int r, int i)
+        {
+            real = r;
+            imag = i;
+        }
+        public ComplexNumber()
+        {
+        }
+
+        public static ComplexNumber operator +(ComplexNumber a, ComplexNumber b)
+        {
+            return new ComplexNumber
+            {
+                real = a.real + b.real,
+                imag = a.imag + b.imag
+            };
+        }
+
+        public static ComplexNumber operator -(ComplexNumber a, ComplexNumber b)
+        {
+            return new ComplexNumber
+            {
+                real = a.real - b.real,
+                imag = a.imag - b.imag
+            };
+        }
+
+        public void OutPut()
+        {
+            Console.WriteLine(real + " + " + imag);
+        }
+    }
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
