@@ -131,11 +131,20 @@ namespace OOP_Session_03
         }
     }
     #endregion
-    internal class Program
+
+    #region Part 2 Q1
+    class Duration
     {
+        public int Hours;
+        public int Minutes;
+        public int Seconds;
+    }
+    #endregion
+        internal class Program
+        {
         static void Main(string[] args)
         {
             
-    }
-    }
+        }
+        }
 }
