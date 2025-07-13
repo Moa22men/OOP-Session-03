@@ -22,7 +22,31 @@ namespace OOP_Session_03
     }
     #endregion
 
-    
+    #region Part 1 Q2
+    class Rectangle
+    {
+        int width;
+        int height;
+
+        public Rectangle()
+        {
+            width = 0;
+            height = 0;
+        }
+
+        public Rectangle(int w, int h)
+        {
+            width = w;
+            height = h;
+        }
+
+        public Rectangle(int value)
+        {
+            width = value;
+            height = value;
+        }
+    }
+    #endregion
 
 
     internal class Program
