@@ -105,6 +105,32 @@ namespace OOP_Session_03
         }
     }
     #endregion
+
+    #region Part 1 Q5
+    class BaseClass
+    {
+        public virtual void Message()
+        {
+            Console.WriteLine("Message from BaseClass");
+        }
+    }
+
+    class DerivedClass1 : BaseClass
+    {
+        public override void Message()
+        {
+            Console.WriteLine("Message from DerivedClass1 (override)");
+        }
+    }
+
+    class DerivedClass2 : BaseClass
+    {
+        public new void Message()
+        {
+            Console.WriteLine("Message from DerivedClass2 (new)");
+        }
+    }
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
