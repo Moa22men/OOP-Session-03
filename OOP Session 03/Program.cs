@@ -87,6 +87,24 @@ namespace OOP_Session_03
         }
     }
     #endregion
+
+    #region Part 1 Q4
+    class Employee
+    {
+        public virtual void Work()
+        {
+            Console.WriteLine("Employee is working");
+        }
+    }
+
+    class Manager : Employee
+    {
+        public override void Work()
+        {
+            Console.WriteLine("Manager is managing");
+        }
+    }
+    #endregion
     internal class Program
     {
         static void Main(string[] args)
