@@ -138,9 +138,20 @@ namespace OOP_Session_03
         public int Hours;
         public int Minutes;
         public int Seconds;
-    }
+        public Duration() { }
+    
     #endregion
-        internal class Program
+
+    #region Part 2 Q2
+     public Duration(int h, int m, int s)
+        {
+            Hours = h;
+            Minutes = m;
+            Seconds = s;
+            
+        }
+    #endregion
+    internal class Program
         {
         static void Main(string[] args)
         {
