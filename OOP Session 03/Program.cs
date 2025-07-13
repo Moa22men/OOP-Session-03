@@ -138,7 +138,7 @@ namespace OOP_Session_03
         public int Hours;
         public int Minutes;
         public int Seconds;
-        public Duration() { }
+        
 
         #endregion
 
@@ -148,9 +148,10 @@ namespace OOP_Session_03
             Hours = h;
             Minutes = m;
             Seconds = s;
+
         }
         #endregion
-
+        public Duration() { }
 
         #region Part 2 Q3
         public override string ToString()
@@ -177,6 +178,62 @@ namespace OOP_Session_03
         {
             return Hours * 3600 + Minutes * 60 + Seconds;
         }
+
+        #endregion
+
+        #region Part 2 Q4
+
+        #region Addition
+        
+        public static Duration operator +(Duration d1, Duration d2)
+        {
+            return new Duration(d1.TotalSeconds() + d2.TotalSeconds());
+        }
+
+        public static Duration operator +(Duration d, int sec)
+        {
+            return new Duration(d.TotalSeconds() + sec);
+        }
+
+        public static Duration operator +(int sec, Duration d)
+        {
+            return new Duration(d.TotalSeconds() + sec);
+        }
+
+        #endregion
+
+        #region Subtraction
+        public static Duration operator -(Duration d1, Duration d2)
+        {
+            int total = d1.TotalSeconds() - d2.TotalSeconds();
+            if (total < 0) total = 0;
+            return new Duration(total);
+        }
+
+        #endregion
+
+        #region Comparison
+        public static bool operator >(Duration d1, Duration d2)
+        {
+            return d1.TotalSeconds() > d2.TotalSeconds();
+        }
+
+        public static bool operator <(Duration d1, Duration d2)
+        {
+            return d1.TotalSeconds() < d2.TotalSeconds();
+        }
+
+        public static bool operator >=(Duration d1, Duration d2)
+        {
+            return d1.TotalSeconds() >= d2.TotalSeconds();
+        }
+
+        public static bool operator <=(Duration d1, Duration d2)
+        {
+            return d1.TotalSeconds() <= d2.TotalSeconds();
+        }
+
+        #endregion
 
         #endregion
         internal class Program
